@@ -2,8 +2,8 @@
 .vs
 
 # Build Directories
-/*build*
-/*out*
+/*build/*
+/*out/*
 
 # Compiled Object files
 *.o
