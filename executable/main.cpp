@@ -4,8 +4,9 @@
 
 #include "another.h"
 
-int main()
+int main(int /*argc*/, char ** /*argv*/) 
 {
+   std::cout << ProjectLib::run_main();
    auto result = ProjectLib::sum(1.0, 2.0);
    std::cout << result << std::endl;
    std::cout << ProjectApp::mul(2, 3) << std::endl;
