@@ -5,6 +5,10 @@
 /*build/*
 /*out/*
 
+# Temporary files
+*.swp
+*.dia~
+
 # Compiled Object files
 *.o
 *.obj
