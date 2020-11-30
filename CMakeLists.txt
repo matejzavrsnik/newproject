@@ -60,4 +60,4 @@ add_subdirectory(executable)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT project_name)
 
 # Set working directory property in Visual Studio so that resource files will be in expected relative place
-set_property(TARGET project_name PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+set_property(TARGET executable PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")

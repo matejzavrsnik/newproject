@@ -1,9 +1,11 @@
-namespace Internal 
+#include "internal.h"
+
+namespace internal
 {
 
-   double sumImplementation(double a, double b)
-   {
-      return a +b;
-   }
+double sum_implementation(double a, double b)
+{
+   return a +b;
+}
 
 }

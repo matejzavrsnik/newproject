@@ -1,14 +1,19 @@
 #include <iostream>
 
-#include "lib.h"
+#include <library/header.h>
 
-#include "another.h"
+#include "application.h"
 
 int main(int /*argc*/, char ** /*argv*/) 
 {
-   std::cout << ProjectLib::run_main();
-   auto result = ProjectLib::sum(1.0, 2.0);
-   std::cout << result << std::endl;
-   std::cout << ProjectApp::mul(2, 3) << std::endl;
+   // example of running imgui GUI
+   std::cout << library::run_main() << std::endl;
+
+   // example of running library function
+   std::cout << library::sum(1.0, 2.0) << std::endl;
+
+   // example of running application function
+   std::cout << application::mul(2, 3) << std::endl;
+
    return 0;
 }

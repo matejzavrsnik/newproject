@@ -1,8 +1,10 @@
+#pragma once
 
+// functionality internal to library
 
-namespace Internal 
+namespace internal
 {
-   double sumImplementation(double a, double b);
-   
+
+double sum_implementation(double a, double b);
 
 }
