@@ -14,7 +14,15 @@ file(GLOB IncludeHeaderFiles include/*.h)
 file(GLOB InternalHeaderFiles src/*.h)
 file(GLOB SourceFiles src/*.cpp)
 
-set(SOURCES ${IncludeHeaderFiles} ${InternalHeaderFiles} ${SourceFiles})
+file (GLOB ImguiAuxiliaryFiles
+   ../3rdparty/imgui/backends/imgui_impl_opengl3.cpp
+   ../3rdparty/imgui/backends/imgui_impl_opengl3.h
+   ../3rdparty/imgui/backends/imgui_impl_sdl.cpp
+   ../3rdparty/imgui/backends/imgui_impl_sdl.h
+   ../3rdparty/imgui/misc/cpp/imgui_stdlib.cpp
+   ../3rdparty/imgui/misc/cpp/imgui_stdlib.h)
+
+set(SOURCES ${IncludeHeaderFiles} ${InternalHeaderFiles} ${SourceFiles} ${ImguiAuxiliaryFiles})
 
 # The result
 add_library(library ${SOURCES})

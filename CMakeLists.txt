@@ -25,7 +25,7 @@ set(CONAN_EXTRA_REQUIRES "")
 set(CONAN_EXTRA_OPTIONS "")
 set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} 
    gtest/1.10.0
-   imgui/1.73@bincrafters/stable
+   imgui/1.79
 
 )
 # Only import conan packages for the following libraries in WIN32, while linking against
@@ -50,6 +50,17 @@ run_conan()
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Additional include directories
+if(WIN32)
+   # not sure if the following is necessary
+   include_directories(${CONAN_INCLUDE_DIRS_SDL2})
+else()
+   # imgui sources #include <SDL2.h> not #include <SDL2/SDL2.h> so I need to make this discoverable
+   include_directories(/usr/include/SDL2)
+endif()
+include_directories(3rdparty/imgui/misc/cpp)
+include_directories(3rdparty/imgui/backends)
 
 # Projects in this solution
 add_subdirectory(library)
