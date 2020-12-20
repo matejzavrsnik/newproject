@@ -28,6 +28,14 @@ then
       rm -rf ./build
    fi
 
+   if [ $1 == "debug" ] || [ $1 == "release" ] || [ $1 == "all" ]
+   then
+      if [ -e ./.gitmodules ]
+      then
+         git submodule update --init --recursive
+      fi
+   fi
+   
    if [ $1 == "debug" ] || [ $1 == "all" ]
    then
       create_directory ./build
