@@ -41,15 +41,15 @@ target_link_libraries(library
 
 # I had trouble importing conan packages for SDL2, QT, and SFML because they
 # required libgl1-mesa-dev package to be installed, which isn't a package on
-# my opensuse 15.1 so I was unable to install it. Instead I installed these
+# my openSUSE 15.1 so I was unable to install it. Instead I installed these
 # as system packages rather than conan packages and linked to library this way.
-if(UNIX)
-   target_link_libraries(library 
+if(BUILDING_ON_OPENSUSE)
+   target_link_libraries(library
       GL # installed on the system
       GLEW # installed on the system
       SDL2 # installed on the system
    )
-elseif(WIN32)
+else()
    target_link_libraries(library 
       CONAN_PKG::glew # defined in root CMakeLists.txt
       CONAN_PKG::sdl2 # defined in root CMakeLists.txt
