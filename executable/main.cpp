@@ -4,10 +4,10 @@
 
 #include "application.h"
 
-int main(int /*argc*/, char ** /*argv*/) 
+int main(int argc, char ** argv)
 {
    // example of running imgui GUI
-   std::cout << library::run_main() << std::endl;
+   std::cout << library::run_main(argc, argv) << std::endl;
 
    // example of running library function
    std::cout << library::sum(1.0, 2.0) << std::endl;

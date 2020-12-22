@@ -14,15 +14,7 @@ file(GLOB IncludeHeaderFiles include/*.h)
 file(GLOB InternalHeaderFiles src/*.h)
 file(GLOB SourceFiles src/*.cpp)
 
-file (GLOB ImguiAuxiliaryFiles
-   ../3rdparty/imgui/backends/imgui_impl_opengl3.cpp
-   ../3rdparty/imgui/backends/imgui_impl_opengl3.h
-   ../3rdparty/imgui/backends/imgui_impl_sdl.cpp
-   ../3rdparty/imgui/backends/imgui_impl_sdl.h
-   ../3rdparty/imgui/misc/cpp/imgui_stdlib.cpp
-   ../3rdparty/imgui/misc/cpp/imgui_stdlib.h)
-
-set(SOURCES ${IncludeHeaderFiles} ${InternalHeaderFiles} ${SourceFiles} ${ImguiAuxiliaryFiles})
+set(SOURCES ${IncludeHeaderFiles} ${InternalHeaderFiles} ${SourceFiles})
 
 # The result
 add_library(library ${SOURCES})
@@ -36,7 +28,7 @@ target_include_directories(library PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # Link this library to others
 
 target_link_libraries(library 
-   CONAN_PKG::imgui # defined in root CMakeLists.txt
+   CONAN_PKG::qt # defined in root CMakeLists.txt
 )
 
 # I had trouble importing conan packages for SDL2, QT, and SFML because they
